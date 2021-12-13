@@ -5,20 +5,15 @@ exports.config = {
   capabilities: [
     {
       browserName: "chrome",
-      browserVersion: "Latest-1",
-      "testable:options": {
-        region: "demo-agents",
-        capturePerformance: true
-      }
+      browserVersion: "Latest-1"
     }
   ],
-  user: "webdriverio",
-  key:  "ahoacuwsekigfckukffprclutcgkpnegksapym",
-  hostname: "dev.testable.io",
+  user: "user-to-log",
+  key:  process.env.TESTABLE_KEY,
+  hostname: "selenium.testable.io",
   protocol: "https",
-  port: 8088,
+  port: 443,
   path: "/wd/hub",
-  logLevel: "trace",
   coloredLogs: true,
   framework: "mocha",
   waitforTimeout: 15000,

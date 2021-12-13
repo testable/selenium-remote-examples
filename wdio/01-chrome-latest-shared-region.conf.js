@@ -1,30 +1,29 @@
 exports.config = {
   specs: [
-    "tests/test.*.js"
+    "tests/test.simple.js"
   ],
   capabilities: [
     {
       browserName: "chrome",
       browserVersion: "Latest",
       "testable:options": {
-        region: "demo-agents",
-        capturePerformance: true
+        reportId: `test-${Date.now()}`
       }
     }
   ],
-  user: "webdriverio",
-  key:  "obbdhajivitekspkyrgdclsnfhylhacvumkkwx",
-  hostname: "dev.testable.io",
+  user: "user-to-log",
+  key:  process.env.TESTABLE_KEY,
+  hostname: "selenium.testable.io",
   protocol: "https",
-  port: 8088,
+  port: 443,
   path: "/wd/hub",
-  logLevel: "trace",
+  logLevel: "info",
   coloredLogs: true,
   framework: "mocha",
   waitforTimeout: 15000,
   connectionRetryTimeout: 1200000,
   mochaOpts: {
     ui: "bdd",
-    timeout: 150000
+    timeout: 1500000
   }
 }

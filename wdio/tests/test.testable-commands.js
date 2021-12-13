@@ -33,6 +33,22 @@ describe('A basic test', function () {
             val: 5,
             units: 'orders'
         });
+        browser.execute('testable:metric', 'timing', {
+            name: 'Order Execution Time',
+            val: 534,
+            units: 'ms'
+        });
+        browser.execute('testable:metric', 'histogram', {
+            name: 'Orders By Type',
+            key: 'Online',
+            val: 5
+        });
+        browser.execute('testable:metric', 'metered', {
+            name: 'Server Memory Usage',
+            key: 'server-123',
+            val: 34524232,
+            units: 'bytes'
+        });
 
         // Send an assertion that failed including error details
         browser.execute('testable:assertion', {

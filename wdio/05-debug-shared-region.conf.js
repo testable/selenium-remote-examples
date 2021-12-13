@@ -1,23 +1,15 @@
 exports.config = {
   specs: [
-    "tests/test.*.js"
+    "tests/debug/test.debug.js"
   ],
   capabilities: [
     {
       browserName: "chrome",
       browserVersion: "Latest",
       "testable:options": {
-        region: "demo-agents",
+        region: "main-region",
         capturePerformance: true,
-        captureWebSocketPerformance: true,
-        logs: "all",
-        recordVideo: true,
-        deviceName: "Desktop 1280 x 1024",
-        testCaseName: "Remote Selenium Tests",
-        scenarioName: "Remote Selenium",
-        testConfigurationName: "Chrome - Desktop 1280 x 1024",
-        "tags": "Remote,Wdio",
-        "reportId": `test-${Date.now()}`
+        reportId: `test-${Date.now()}`
       }
     }
   ],
@@ -34,6 +26,6 @@ exports.config = {
   connectionRetryTimeout: 1200000,
   mochaOpts: {
     ui: "bdd",
-    timeout: 150000
+    timeout: 1500000
   }
 }

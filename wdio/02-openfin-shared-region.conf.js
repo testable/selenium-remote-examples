@@ -1,14 +1,13 @@
 exports.config = {
   specs: [
-    "tests/test.testable-commands.js"
+    "tests/openfin/test.*.js"
   ],
   capabilities: [
     {
       browserName: "chrome",
-      browserVersion: "Latest",
       "testable:options": {
-        region: "us-east-1",
-        capturePerformance: true
+        region: "aws-us-east-1",
+        openfinConfigUrl: "https://raw.githubusercontent.com/testable/openfin-wdio-testable-example/master/app_sample.json"
       }
     }
   ],
@@ -25,6 +24,7 @@ exports.config = {
   connectionRetryTimeout: 1200000,
   mochaOpts: {
     ui: "bdd",
-    timeout: 150000
-  }
+    timeout: 1500000
+  },
+  maxInstances: 2
 }
