@@ -7,27 +7,27 @@
  "use strict";
 
  const should = require('chai').should();
- 
+
  require('../../utils/assertion-reporter');
- 
+
  describe('Hello OpenFin App testing with webdriver.io', function() {
      let notificationButton, cpuInfoButton, cpuInfoExitButton;
- 
+
      /**
       * Select the window with specified title
       * @param windowTitle window title
       */
-     function switchWindowByTitle(windowTitle) {
-         browser.switchWindow(windowTitle);
+     async function switchWindowByTitle(windowTitle) {
+        await browser.switchWindow(windowTitle);
      }
- 
- 
+
+
      /**
       *  Check if OpenFin Javascript API fin.desktop.System.getVersion exits
       *
      **/
-     function checkFinGetVersion() {
-         const result = browser.executeAsync(function (done) {
+     async function checkFinGetVersion() {
+         const result = await browser.executeAsync(function (done) {
              if (fin && fin.desktop && fin.desktop.System && fin.desktop.System.getVersion) {
                  done(true);
              } else {
@@ -36,75 +36,75 @@
          });
          return result;
      }
- 
+
      /**
-      *  Wait for OpenFin Javascript API to be injected 
+      *  Wait for OpenFin Javascript API to be injected
       *
      **/
-     function waitForFinDesktop() {
-         const ready = checkFinGetVersion();
+     async function waitForFinDesktop() {
+         const ready = await checkFinGetVersion();
          if (!ready) {
-             browser.pause(1000);
-             waitForFinDesktop();               
+             await browser.pause(1000);
+             await waitForFinDesktop();
          }
      }
- 
-     it('Switch to Hello OpenFin Main window', () => {
-         switchWindowByTitle("Hello OpenFin");
-         browser.saveScreenshot('./main.png');
+
+     it('Switch to Hello OpenFin Main window', async () => {
+         await switchWindowByTitle("Hello OpenFin");
+         await browser.saveScreenshot('./main.png');
      });
- 
-     it('Wait for OpenFin API ready', () => {
-         waitForFinDesktop();
+
+     it('Wait for OpenFin API ready', async () => {
+         await waitForFinDesktop();
      });
- 
-     it("Find notification button", () => {
-         const result = $("#desktop-notification");
+
+     it("Find notification button", async () => {
+         const result = await $("#desktop-notification");
          should.exist(result);
          notificationButton = result;
      });
- 
-     it("Click notification button", () => {
+
+     it("Click notification button", async () => {
          should.exist(notificationButton);
-         notificationButton.click();
+         await notificationButton.click();
      });
- 
- 
-     it("Find CPU Info button", () => {
-         const result = $("#cpu-info");
+
+
+     it("Find CPU Info button", async () => {
+         const result = await $("#cpu-info");
          should.exist(result);
          cpuInfoButton = result;
      });
- 
-     it("Click CPU Info button", () => {
+
+     it("Click CPU Info button", async () => {
          should.exist(cpuInfoButton);
-         const result = cpuInfoButton.click();
+         await cpuInfoButton.click();
          browser.pause(3000); // pause just for demo purpose so we can see the window
      });
- 
- 
-     it('Switch to CPU Info window', () => {
-         switchWindowByTitle("Hello OpenFin CPU Info");
-         browser.saveScreenshot('./cpu.png');
+
+
+     it('Switch to CPU Info window', async () => {
+         await switchWindowByTitle("Hello OpenFin CPU Info");
+         await browser.saveScreenshot('./cpu.png');
      });
- 
- 
-     it("Find Exit button for CPU Info window", () => {
-         const result = $("#close-app");
+
+
+     it("Find Exit button for CPU Info window", async () => {
+         const result = await $("#close-app");
          should.exist(result);
          cpuInfoExitButton = result;
      });
- 
-     it("Click CPU Info Exit button", () => {
+
+     it("Click CPU Info Exit button", async () => {
          should.exist(cpuInfoExitButton);
-         cpuInfoExitButton.click();
+         await cpuInfoExitButton.click();
      });
- 
-     it('Exit OpenFin Runtime', () => {
-         browser.execute(function () {
+
+     it('Exit OpenFin Runtime', async () => {
+         await browser.execute(function () {
              fin.desktop.System.exit();
          });
-         browser.pause(1000); // pause here to give Runtime time to exit
+         await browser.pause(1000); // pause here to give Runtime time to exit
      });
- 
+
  });
