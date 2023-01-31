@@ -7,7 +7,7 @@ exports.config = {
       browserName: "chrome",
       browserVersion: "Latest",
       "testable:options": {
-        region: "demo-agents",
+        region: "aws-us-east-1",
         capturePerformance: true,
         captureWebSocketPerformance: true,
         logs: "all",
