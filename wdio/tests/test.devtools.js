@@ -6,7 +6,7 @@ describe('A basic test', function() {
   it('should go to google + testable (via CDP)', async function() {
     await browser.url('https://www.google.com');
     await browser.saveScreenshot('./google.png');
-    const puppeteerBrowser = await browser.getPuppeteer()
+    const puppeteerBrowser = await browser.getPuppeteer();
     // switch to Puppeteer
     const page = (await puppeteerBrowser.pages())[0];
     await page.setViewport({ width: 1920, height: 1080 });
@@ -16,6 +16,6 @@ describe('A basic test', function() {
 
     await browser.pause(2000);
     const title = await browser.getTitle();
-    assert.strictEqual(title, 'Google');
+    assert.strictEqual(title, 'Testable');
   });
 });
