@@ -7,7 +7,9 @@ exports.config = {
       browserName: "chrome",
       browserVersion: "Latest",
       "testable:options": {
-        reportId: `test-${Date.now()}`
+        region: "aws-us-east-1",
+        reportId: `test-${Date.now()}`,
+        seleniumVersion: '4.x'
       }
     }
   ],

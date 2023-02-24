@@ -11,7 +11,8 @@ exports.config = {
       "testable:options": {
         capturePerformance: true,
         reportId: reportId,
-        deviceName: 'Android - Pixel 2 (411 x 731)'
+        deviceName: 'Android - Pixel 2 (411 x 731)',
+        region: 'aws-us-east-1'
       }
     }
   ],
