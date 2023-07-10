@@ -1,3 +1,5 @@
+const WdioAssertionReporter = require('./utils/assertion-reporter');
+
 const reportId = `test-${Date.now()}`;
 
 exports.config = {
@@ -15,6 +17,9 @@ exports.config = {
         region: 'aws-us-east-1'
       }
     }
+  ],
+  reporters: [
+    WdioAssertionReporter
   ],
   user: "user-to-log",
   key:  process.env.TESTABLE_KEY,

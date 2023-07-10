@@ -1,3 +1,5 @@
+const WdioAssertionReporter = require('./utils/assertion-reporter');
+
 exports.config = {
   specs: [
     "tests/test.testable-commands.js"
@@ -11,6 +13,9 @@ exports.config = {
         capturePerformance: true
       }
     }
+  ],
+  reporters: [
+    WdioAssertionReporter
   ],
   user: "user-to-log",
   key:  process.env.TESTABLE_KEY,

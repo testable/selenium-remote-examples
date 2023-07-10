@@ -8,8 +8,6 @@
 
  const should = require('chai').should();
 
- require('../../utils/assertion-reporter');
-
  describe('Hello OpenFin App testing with webdriver.io', function() {
      let notificationButton, cpuInfoButton, cpuInfoExitButton;
 

@@ -1,3 +1,5 @@
+const WdioAssertionReporter = require('./utils/assertion-reporter');
+
 exports.config = {
     specs: [
         "tests/test.*.js"
@@ -22,6 +24,9 @@ exports.config = {
                 reportId: `test-${Date.now()}`
             }
         }
+    ],
+    reporters: [
+      WdioAssertionReporter
     ],
     user: "user-to-log",
     key:  process.env.TESTABLE_KEY,

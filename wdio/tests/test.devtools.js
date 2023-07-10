@@ -1,7 +1,5 @@
 const assert = require('assert');
 
-require('../utils/assertion-reporter');
-
 describe('A basic test', function() {
   it('should go to google + testable (via CDP)', async function() {
     await browser.url('https://www.google.com');

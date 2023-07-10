@@ -3,7 +3,7 @@ Selenium Remote Examples
 
 Example code for running a Selenium test against the Testable remote grid. Currently implemented with the <a target="_blank" href="https://webdriver.io">Webdriver.io</a> Selenium client library.
 
-The examples include an `assertion-reporter.js` utility that reports the test steps back to Testable as assertions that can be seen along side the test results.
+The examples include an `assertion-reporter.js` Webdriver.io reporter that reports the test steps back to Testable as assertions that can be seen along side the test results.
 
 ### Steps to Run
 

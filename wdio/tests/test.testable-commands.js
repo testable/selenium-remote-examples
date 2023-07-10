@@ -1,5 +1,4 @@
 const assert = require('assert');
-require('../utils/assertion-reporter');
 
 describe('A basic test', function () {
     it('should be possible to use all Testable commands', async function () {

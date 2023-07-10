@@ -1,3 +1,5 @@
+const WdioAssertionReporter = require('./utils/assertion-reporter');
+
 exports.config = {
   specs: [
     "tests/test.simple.js"
@@ -7,6 +9,9 @@ exports.config = {
       browserName: "chrome",
       browserVersion: "Latest-1"
     }
+  ],
+  reporters: [
+    WdioAssertionReporter
   ],
   user: "user-to-log",
   key:  process.env.TESTABLE_KEY,

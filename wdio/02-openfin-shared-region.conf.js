@@ -1,3 +1,5 @@
+const WdioAssertionReporter = require('./utils/assertion-reporter');
+
 exports.config = {
   specs: [
     "tests/openfin/test.*.js"
@@ -10,6 +12,9 @@ exports.config = {
         openfinConfigUrl: "https://raw.githubusercontent.com/testable/openfin-wdio-testable-example/master/app_sample.json"
       }
     }
+  ],
+  reporters: [
+    WdioAssertionReporter
   ],
   user: "user-to-log",
   key:  process.env.TESTABLE_KEY,
