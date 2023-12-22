@@ -20,7 +20,6 @@ exports.config = {
   key:  process.env.TESTABLE_KEY,
   hostname: "selenium.testable.io",
   protocol: "https",
-  port: 443,
   path: "/wd/hub",
   logLevel: "info",
   coloredLogs: true,

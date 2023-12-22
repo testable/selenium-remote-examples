@@ -2,7 +2,7 @@ const WdioAssertionReporter = require('./utils/assertion-reporter');
 
 exports.config = {
   specs: [
-    "tests/test.simple.js"
+    "tests/test.devtools.js"
   ],
   capabilities: [
     {
@@ -22,7 +22,6 @@ exports.config = {
   key:  process.env.TESTABLE_KEY,
   hostname: "selenium.testable.io",
   protocol: "https",
-  port: 443,
   path: "/wd/hub",
   logLevel: "info",
   coloredLogs: true,

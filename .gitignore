@@ -1,2 +1,5 @@
 *.png
 node_modules/
+.gradle
+java/build/
+.DS_Store

@@ -2,15 +2,14 @@
   "name": "testable-wdio-remote-examples",
   "version": "1.0.0",
   "description": "Example configs to run tests against the Testable remote grid",
-  "main": "simple.conf.js",
-  "author": "Avi Stramer",
+  "author": "Testable Team",
   "license": "ISC",
   "dependencies": {
-    "@wdio/cli": "^8.3.0",
-    "@wdio/local-runner": "^8.3.0",
-    "@wdio/mocha-framework": "^8.3.0",
-    "@wdio/reporter": "^7.20.7",
+    "@wdio/cli": "^8.27.0",
+    "@wdio/local-runner": "^8.27.0",
+    "@wdio/mocha-framework": "^8.27.0",
+    "@wdio/reporter": "^8.27.0",
     "chai": "^4.3.7",
-    "webdriverio": "^8.3.0"
+    "webdriverio": "^8.27.0"
   }
 }
