@@ -20,6 +20,8 @@ describe('A basic test', function () {
 
         // Indicate that we are finishing the test step.
         await browser.execute('testable:assertion:finish', {
+            suite: 'Streaming suite',
+            name: 'Loading Google and sleeping a while',
             state: 'passed',
             screenshot: true
         });
